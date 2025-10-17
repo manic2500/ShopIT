@@ -1,0 +1,51 @@
+# === General ===
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# === Logs ===
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# === Environment Variables ===
+**/.env
+**/.env.*     # e.g., .env.local, .env.production
+
+# === OS/Editor Files ===
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# === TypeScript Build Output ===
+backend/dist/
+
+# === Nodemon & ts-node Cache ===
+**/.ts-node-cache/
+**/tmp/
+**/temp/
+
+# === Frontend: React (CRA or Vite) ===
+frontend/build/
+frontend/dist/
+
+# CRA specific
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# Vite specific
+frontend/.vite/
+
+# React testing artifacts
+frontend/coverage/
+frontend/jest-test-results.json
+
+# === Misc ===
+*.log
+*.tgz
