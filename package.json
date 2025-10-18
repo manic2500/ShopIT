@@ -4,10 +4,10 @@
   "description": "ECommerce App",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=DEVELOPMENT nodemon --config backend/nodemon.json",
+    "dev": "NODE_ENV=DEV nodemon --config backend/nodemon.json",
     "build": "tsc --project backend/tsconfig.json",
-    "start": "NODE_ENV=PRODUCTION node backend/dist/app.js",
-    "prod": "NODE_ENV=PRODUCTION nodemon backend/dist/app.js"
+    "start": "NODE_ENV=PROD node backend/dist/app.js",
+    "prod": "NODE_ENV=PROD nodemon backend/dist/app.js"
   },
   "keywords": [],
   "author": "Manic",
