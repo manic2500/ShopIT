@@ -1,18 +1,19 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
+import { getDatabaseUri } from '../config/dbConfig'; // ✅ Import the utility
+
+// Note: You should ensure your .env files are loaded before this function runs (e.g., in app.ts)
 
 export const connectDatabase = () => {
+    try {
+        // 💡 Use the extracted function to get the URI
+        const DB_URI = getDatabaseUri();
 
-    let DB_URI = ""
-
-    if (process.env.NODE_ENV === 'DEV')
-        DB_URI = process.env.DB_LOCAL_URI!
-    else if (process.env.NODE_ENV === 'PROD')
-        DB_URI = process.env.DB_URI!
-
-    console.log(DB_URI);
-
-    mongoose.connect(DB_URI).then(con => {
-        console.log(`Mongo Database connected with HOST: ${con?.connection?.host}`);
-
-    })
+        mongoose.connect(DB_URI).then(con => {
+            console.log(`✅ Mongo Database connected with HOST: ${con?.connection?.host} in ${process.env.NODE_ENV} mode.`);
+        });
+    } catch (error) {
+        console.error("❌ Database connection failed:", error);
+        // Optional: Exit the process if connection is critical
+        // process.exit(1); 
+    }
 }

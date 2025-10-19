@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=DEV nodemon --config backend/nodemon.json",
+    "staging": "NODE_ENV=PROD nodemon --config backend/nodemon.json",
     "build": "tsc --project backend/tsconfig.json",
     "start": "NODE_ENV=PROD node backend/dist/app.js",
-    "prod": "NODE_ENV=PROD nodemon backend/dist/app.js"
+    "prod": "NODE_ENV=PROD nodemon backend/dist/app.js",
+    "seed": "ts-node backend/seed/seeder.ts"
   },
   "keywords": [],
   "author": "Manic",
