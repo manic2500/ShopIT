@@ -1,9 +1,8 @@
 import mongoose from "mongoose";
-import { IUser } from "./user";
 
 // Interface for the Review Sub-document
 export interface IReview {
-    user: IUser['_id'], //Types.ObjectId
+    user: mongoose.Types.ObjectId
     rating: number,
     comment: string
 }
